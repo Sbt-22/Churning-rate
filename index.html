@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Customer Churn Prediction</title>
+</head>
+<body>
+    <h2>Bank Customer Churn Prediction</h2>
+    <form action="/predict" method="post">
+        <label>Payment_Delay:</label>
+        <input type="number" name="Payment_Delay" step="any" required><br><br>
+        
+        <label>Age:</label>
+        <input type="number" name="Age" step="any" required><br><br>
+		
+		<label>Tenure:</label>
+        <input type="number" name="Tenure" step="any" required><br><br>
+        
+		<label>Support_calls:</label>
+        <input type="number" name="Support_calls" step="any" required><br><br>
+        <!-- Repeat for all required input features -->
+        
+        <button type="submit">Predict</button>
+    </form>
+    {% if prediction_text %}
+        <h3>{{ prediction_text }}</h3>
+    {% endif %}
+</body>
+</html>
+
